@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="ElevatorSimulator.Views.FloorDoor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ElevatorSimulator.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="150" d:DesignWidth="150">
+    <Grid Margin="10">
+        <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1">
+            <StackPanel Margin="10">
+                <WrapPanel>
+                    <Label Content="Floor Level : " FontWeight="Bold"></Label>
+                    <Label Content="{Binding Path=FloorNumber}" FontWeight="Bold"></Label>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Cage At Floor: "></Label>
+                    <Label Content="{Binding Path=CageAtFloorInformation}" FontWeight="Bold"></Label>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Cage Status: "></Label>
+                    <Label Content="{Binding Path=CageStatus}" FontWeight="Bold"></Label>
+                </WrapPanel>
+                <WrapPanel>
+                    <Label Content="Door Status: "></Label>
+                    <Label Content="{Binding Path=DoorStatus}" FontWeight="Bold"></Label>
+                </WrapPanel>
+                <Button Click="Button_Click">
+                    <TextBlock>Request Elevator</TextBlock>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

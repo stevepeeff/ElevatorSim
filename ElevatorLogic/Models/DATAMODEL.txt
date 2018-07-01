@@ -1,0 +1,5 @@
+﻿This folder holds the (domain) models (It should be in the project where the Interface of the engine is defined)
+
+The models do NOT have any knowledge of the UI (so View and ViewModel). 
+Nor do the have any knowledge of persistence (DAL)
+The 'Engine' uses the models to update the state of the system

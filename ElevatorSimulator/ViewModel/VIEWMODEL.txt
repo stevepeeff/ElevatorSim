@@ -1,0 +1,10 @@
+﻿This folder holds the View models  
+
+These models represent / provide UI required information
+They provide glue code (INotifyProprtyCanged) to update the view when a property of a (domain) model changes state
+They provide glue code (ICommand) to call 'Engine' functions to make the system interact
+
+The do the have any knowledge of persistence (DAL)
+
+//https://www.codeproject.com/Articles/819294/WPF-MVVM-step-by-step-Basics-to-Advance-Level
+//https://www.codeproject.com/Articles/1052346/ICommand-Interface-in-WPF

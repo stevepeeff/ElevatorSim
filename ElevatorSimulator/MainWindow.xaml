@@ -1,0 +1,35 @@
+﻿<Window x:Class="ElevatorSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:ElevatorSimulator.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<controls:DoorAnimation>
+        </controls:DoorAnimation>-->
+        <StackPanel>
+            <WrapPanel HorizontalAlignment="Center">
+                <Label Content="Elevator Queue"></Label>
+                <Label Content="{Binding Path=ElevatorQueue}" FontWeight="Bold"></Label>
+            </WrapPanel>
+            <controls:CageInformation></controls:CageInformation>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+
+            <controls:FloorDoor x:Name="Floor2"></controls:FloorDoor>
+            <controls:FloorDoor x:Name="Floor1"></controls:FloorDoor>
+            <controls:FloorDoor x:Name="Floor0"></controls:FloorDoor>
+            <!--<Button Content="Floor 2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" />
+            <Button Content="Floor 1" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" />
+            <Button Content="Floor 0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" />
+            <Button Content="NOTHING" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" />
+            <Button Content="Open Doors" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" />-->
+        </StackPanel>
+    </Grid>
+</Window>

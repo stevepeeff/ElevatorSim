@@ -1,0 +1,6 @@
+﻿The engine implements the logic of the system (provided by the Interface)
+
+It creates and maintains the domain entities
+The 'Engine' uses the models to update the state of the system
+The logic does NOT have any knowledge of the UI (so View and ViewModel), nor does it depends on it.
+It calls (uses) functions for persistence (via the DAL), but it does NOT have any knowledge of persistence technique/implementation
