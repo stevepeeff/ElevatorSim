@@ -9,9 +9,7 @@ namespace ElevatorHal
 {
     public class InterfaceProvider
     {
-        private static InterfaceProvider m_Instance = new InterfaceProvider();
-
-        public static InterfaceProvider Instance { get { return m_Instance; } }
+        public static InterfaceProvider Instance { get; } = new InterfaceProvider();
 
         public IDoorIO IDoor
         {

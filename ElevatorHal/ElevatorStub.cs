@@ -22,8 +22,8 @@ namespace ElevatorHal
     /// <seealso cref="ElevatorHal.Interfaces.IElevatorCageIO" />
     public class ElevatorStub : HalBase, IElevatorCageIO
     {
-        private static readonly ILog m_Logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private const int EMERGENCY_DELAY = 500;
+        private static readonly ILog m_Logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private int? m_AtFloor = null;
         private bool m_continue = false;
         private EngineStatusEnum m_EngineStatus = EngineStatusEnum.Idle;
@@ -35,7 +35,7 @@ namespace ElevatorHal
         /// <param name="topFloorNumber">The top floor number.</param>
         public ElevatorStub(int topFloorNumber)
         {
-            TopfloorNumber = topFloorNumber;
+            TopFloorNumber = topFloorNumber;
         }
 
         private enum DirectionEnum
@@ -70,12 +70,12 @@ namespace ElevatorHal
         }
 
         /// <summary>
-        /// Gets the bottomfloor number.
+        /// Gets the bottom floor number.
         /// </summary>
         /// <value>
-        /// The bottomfloor number.
+        /// The bottom floor number.
         /// </value>
-        public int BottomfloorNumber { get; } = 0;
+        public int BottomFloorNumber { get; } = 0;
 
         /// <summary>
         /// Gets the cage door.
@@ -105,12 +105,12 @@ namespace ElevatorHal
         }
 
         /// <summary>
-        /// Gets the topfloor number.
+        /// Gets the top floor number.
         /// </summary>
         /// <value>
-        /// The topfloor number.
+        /// The top floor number.
         /// </value>
-        public int TopfloorNumber { get; private set; }
+        public int TopFloorNumber { get; }
 
         public void CloseDoor()
         {
@@ -119,8 +119,8 @@ namespace ElevatorHal
 
         public override void Initialize()
         {
-            (CageDoor as DoorStub).Initialize();
-            AtFloor = BottomfloorNumber;
+            CageDoor.Initialize();
+            AtFloor = BottomFloorNumber;
         }
 
         public void MoveDown()
@@ -138,7 +138,7 @@ namespace ElevatorHal
 
                 case EngineStatusEnum.Idle:
                     {
-                        if (AtFloor != BottomfloorNumber)
+                        if (AtFloor != BottomFloorNumber)
                         {
                             MoveCage(DirectionEnum.DOWN);
                         }
@@ -162,7 +162,7 @@ namespace ElevatorHal
 
                 case EngineStatusEnum.Idle:
                     {
-                        if (AtFloor != TopfloorNumber)
+                        if (AtFloor != TopFloorNumber)
                         {
                             MoveCage(DirectionEnum.UP);
                         }

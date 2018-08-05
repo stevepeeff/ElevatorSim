@@ -41,7 +41,7 @@ namespace ElevatorHal
 
         public override void Initialize()
         {
-            (FloorDoor as DoorStub).Initialize();
+            FloorDoor.Initialize();
         }
     }
 }
